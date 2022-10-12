@@ -40,12 +40,20 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 20,
                 ),
                 signInAppButton(context, true, () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const DashboardScreen()));
+                  if (_pinTextController.text== "1234") {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => DashboardScreen()));
+                  }else{
+                    print("Pincode is empty");
+                  }
                 }),
               ],
             ),
           ),
        ),
+       
       ),
       );
   }
